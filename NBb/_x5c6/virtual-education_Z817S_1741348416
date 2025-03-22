@@ -5,7 +5,6 @@ WORKDIR /src/
 COPY ./downgrade_libssl.sh .
 RUN ./dockerbuilder.sh
 
-FROM ubuntu:20.04
 WORKDIR /classroombot/
 COPY --from=builder ["/lib/x86_64-linux-gnu/libcrypto++.so.6", "./libs/"]
 COPY ./docker_runtime_libs.sh .
